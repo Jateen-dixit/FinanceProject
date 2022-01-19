@@ -1,0 +1,38 @@
+{% extends 'DashboardApp/base.html' %}
+
+{% block title %}
+<title>Loan Details</title>
+{% endblock %} 
+
+{% block form %}
+<div class="jumbotron">
+    <table class="table table-dark">
+        <tr>
+            <th>Full Name</th>
+            <th>Gender</th>
+            <th>Date Of Birth</th>
+            <th>Mobile Number</th>
+            <th>Email</th>
+            <th>Pan Number</th>
+            <th>Required Loan</th>
+            <th>Cibil Score</th>
+            <th>Remark</th>
+        
+        </tr>
+    
+        {% for ld in loandetails_obj %}
+        <tr>
+            <td>{{ld.full_name}}</td>
+            <td>{{ld.gender}}</td>
+            <td>{{ld.dob}}</td>
+            <td>{{ld.mobile}}</td>
+            <td>{{ld.email}}</td>
+            <td>{{ld.pan_number}}</td>
+            <td>{{ld.required_loan}}</td>
+            <td>{{ld.cibil_score}}</td>
+            <td>{{ld.is_eligible}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock form %}
